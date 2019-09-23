@@ -1,4 +1,6 @@
-
+def tes():
+    print("AAAAA")
+    
 def get_divisas(col, divisas):
 
     # Función para obtener las diferentes monedas
@@ -28,15 +30,16 @@ def get_values(value, divisas, valores):
         return value
 
 
+
 def get_ciudades(col, ciudades):
 
     # Función para ordenar la columna de las ciudades y filtrar luego solo las que me interesan
 
-    for key, value in ciudades.items():
-        if key == col:
-            return col
-        else:
-            return "other"
+    if col not in ciudades:
+        return "other"
+    else:
+        return col
+        
 
 def geopoint(longitude, latitude):
 
