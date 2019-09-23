@@ -13,4 +13,11 @@ def getVeganRestaurants(lat, lon):
     return response
 
 
+def getCityCoor(name, coord_key):
 
+    # Función para obtener las coordenadas de las ciudades
+    
+    url = "https://api.opencagedata.com/geocode/v1/json?q={}&key={}".format(name, coord_key)
+    response = requests.get(url)
+    response = response.json()
+    return response
