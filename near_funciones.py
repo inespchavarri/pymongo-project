@@ -1,8 +1,8 @@
-def GetCompaniesNear(geopoint, max_meters=1000):
+def getCompaniesNear(db, geopoint, max_meters=1000):
 
     # Función para obtener el número de empresas situadas a un km a la redonda del punto seleccionado
 
-    return len(list(db.clean_companies.find({
+    return len(list(db.find({
         "geo": {
             "$near": {
                 "$geometry": geopoint,
@@ -12,11 +12,11 @@ def GetCompaniesNear(geopoint, max_meters=1000):
     })))
 
 
-def getEmployees(geopoint, max_meters=1000):
+def getEmployees(db, geopoint, max_meters=1000):
 
     # Función para obtener el número de empleados que trabajan en las diferentes empresas situadas a un km a la redonda
 
-    info = list(db.clean_companies.find({
+    info = list(db.find({
         "geo": {
             "$near": {
                 "$geometry": geopoint,
@@ -31,11 +31,11 @@ def getEmployees(geopoint, max_meters=1000):
     return total
 
 
-def getMoney(geopoint, max_meters=1000):
+def getMoney(db, geopoint, max_meters=1000):
 
     # Función para calcular el dinero total de las empresas situadas a un km a la redonda
 
-    info = list(db.clean_companies.find({
+    info = list(db.find({
         "geo": {
             "$near": {
                 "$geometry": geopoint,
@@ -49,3 +49,22 @@ def getMoney(geopoint, max_meters=1000):
         total += e["total_amount_raised"]
     
     return total
+
+'''
+
+    def getMoney(geopoint, max_meters=1000):
+    info = list(db.clean_companies.find({
+        "geo": {
+            "$near": {
+                "$geometry": geopoint,
+                "$maxDistance": max_meters
+            }
+        }
+    }))
+    
+    total = 0
+    for e in info:
+        total += e["total_amount_raised"]
+    return total
+
+'''
