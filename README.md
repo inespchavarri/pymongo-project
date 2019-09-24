@@ -20,12 +20,12 @@ Una vez creado un geoindice en los documentos exportados a MongoDB, vuelvo a imp
 Para hallar la localización final de la empresa planteada tomo como referencia la ciudad de San Francisco. Según los datos obtenidos, concentra el mayor número de empresas de videojuegos y de otros sectores tecnológicos. A su vez, tomo como refrencia la compañía instalada en la ciudad californiana que más dinero ha obtenido y geolocalizo con sus coordenadas los restaurantes veganos, bares y cafeterías en un radio de un kilómetro.
 
 
-<img scr:"./output/empresa.png>
-<img scr:"./output/mapa.png">
+![alt text](https://raw.githubusercontent.com/inespchavarri/pymongo-project/master/output/empresa.png)
+
+![alt text](https://raw.githubusercontent.com/inespchavarri/pymongo-project/master/output/mapa.png)
 
 
-
-Por tanto, las coordenadas elegidas para lo localización de la empresa son: 
+Por tanto, las coordenadas elegidas para lo localización de la empresa son: latitud: 37.7652, longitud: -122.404
 
 
 ### Próximos pasos
