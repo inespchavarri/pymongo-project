@@ -1,6 +1,6 @@
 # pymongo-project
 
-El objetivo del proyecto es establecer la mejor localización para una empresa de videojuegos. La decisión depende de varias condiciones planteadas por los trabajadores, como el deseo de los diseñadores de estar junto a otras empresas del mismo sector, que las compañías más próximas hayan sido capaces de ganar más de un millón o de la exigencia impuesta por el CEO para tener restaurantes veganos cerca.
+El objetivo del proyecto es encontrar la mejor localización para una empresa de videojuegos. La decisión depende de varias condiciones planteadas por los trabajadores, como el deseo de los diseñadores de estar junto a otras empresas del mismo sector, que las compañías más próximas hayan sido capaces de ganar más de un millón o de la exigencia impuesta por el CEO para tener restaurantes veganos cerca.
 
 ## Pasos dados:
 
@@ -12,27 +12,22 @@ Tras esta primera query, limpio otros datos (valores nulos en la longitud y lati
 
 ### Análisis de los datos
 
-Una vez creado un geoindice en los documentos exportados a MongoDB, vuelvo a importarlos a un jupyter Notebook. Con la creación de varias funciones con el operador $near obtengo más datos como el número total de compañías situadas a un kilometro a la redonda de una dada, así como el dinero total acumulado o el número de trabajadores en esa misma área. Además, extraigo datos de la api de Zomato para gelocalizar restaurants veganos próximos a esas empresas. 
+Una vez creado un geoindice en los documentos exportados a MongoDB, vuelvo a importarlos a un Jupyter Notebook. Con la creación de varias funciones con el operador $near obtengo más datos como el número total de compañías situadas a un kilómetro a la redonda de una dada, así como el dinero total acumulado o el número de trabajadores en esa misma área. Además, extraigo datos de la api de Zomato para gelocalizar restaurants veganos, cafeterías y bares próximos a esas empresas. 
 
 
 ### Conclusión
 
+Para hallar la localización final de la empresa planteada tomo como referencia la ciudad de San Francisco. Según los datos obtenidos, concentra el mayor número de empresas de videojuegos y de otros sectores tecnológicos. A su vez, tomo como refrencia la compañía instalada en la ciudad californiana que más dinero ha obtenido y geolocalizo con sus coordenadas los restaurantes veganos, bares y cafeterías en un radio de un kilómetro.
 
-_id                                             5d83a90255488441b3fff58d
-name                                                             Rupture
-category_code                                                games_video
-number_of_employees                                                   25
-founded_year                                                         NaN
-deadpooled_year                                                     None
-description                                        Gaming Social Network
-latitude                                                         37.7839
-longitude                                                       -122.395
-country                                                              USA
-state                                                                 CA
-city                                                       San Francisco
-monedas                                          Dolares estadounidenses
-total_amount_raised                                                3e+06
-geo                    {'type': 'Point', 'coordinates': [-122.395234,...
-num_companies                                                         27
-num_employees                                                       2662
-total_money            
+
+<img scr:"./output/empresa.png>
+<img scr:"./output/mapa.png">
+
+
+
+Por tanto, las coordenadas elegidas para lo localización de la empresa son: 
+
+
+### Próximos pasos
+
+El mismo análisis hecho para San Francisco se podría hacer en Nueva York y Seattle. Las otras dos ciudades, según los datos obtenidos, que concentran un número de empresas suficientes. También se podrían obtener más datos de otras Apis con el objetivo de cumplir más requsitios planteados por los trabajadores (aeropuertos y colegios próximos, por ejemplo).
